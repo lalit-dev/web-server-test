@@ -49,6 +49,17 @@ app.get('/weather', (req, res) => {
         })
     }
 
+
+
+    // TODO: Update geocode and forecast api keys
+    // remove below snippet once it is done
+    res.json({        
+        forecast: "Pleasent Weather. Keep Going",
+        location: req.query.address,
+        address: req.query.address
+    })
+    return;
+
     geocode(req.query.address, (error, { latitude, longitude, location } = {}) => {
         if (error) {
             return res.send({ error })
